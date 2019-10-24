@@ -1,4 +1,5 @@
-# WASM
+# WASMER
+Wasmer is a is a standalone WebAssembly runtime for running WebAssembly outside of the browser, supporting WASI and Emscripten.
 
 ## VM
 ```***.**.***.149```
