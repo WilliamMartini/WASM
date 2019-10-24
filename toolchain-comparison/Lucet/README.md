@@ -2,5 +2,6 @@
 ## VM
 ***.**.***.143
 ## Links
-https://github.com/fastly/lucet
-https://www.fastly.com/blog/announcing-lucet-fastly-native-webassembly-compiler-runtime
+https://github.com/fastly/lucet  
+https://www.fastly.com/blog/announcing-lucet-fastly-native-webassembly-compiler-runtime  
+https://jaxenter.com/webassembly-lucet-157393.html
