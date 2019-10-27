@@ -65,7 +65,7 @@ https://github.com/golang/go/wiki/Ubuntu
 https://gobyexample.com/hello-world
 
 ## Getting started with WebAssembly and Go
-https://github.com/golang/go/wiki/WebAssembly
+https://github.com/golang/go/wiki/WebAssembly  
 https://github.com/markfarnan/go-canvas
 
 ## Links
