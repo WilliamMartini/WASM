@@ -2,7 +2,7 @@
 We complied some c code to wasm and then ran it on the different runtime tools. We ran each test 3 times for each tool.
 
 ### Primes
-This test checks if a large prime number is indeed a prime number.
+This test checks if a large prime number is indeed a prime number.  
 time wasmtime primes.wasm
 ```
 real	0m35.891s
@@ -26,9 +26,10 @@ real	0m26.785s
 user	0m26.775s
 ```
 Here we observe wasmer runs about 10 seconds faster
+
 ------
 ### Fibonacci
-Here we find the Nth fibonacci number (in the test we used N=42)
+Here we find the Nth fibonacci number (in the test we used N=42)  
 time wasmtime primes.wasm
 ```
 real	0m10.217s
@@ -52,4 +53,5 @@ real	0m11.402s
 user	0m11.391s
 ```
 Here we observe wasmer runs about 1 second slower
+
 ------
