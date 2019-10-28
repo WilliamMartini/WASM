@@ -11,6 +11,8 @@ GOOS=js GOARCH=wasm go build -o ***.wasm
 ```shell
 lucetc-wasi -o prime.so ***.wasm
 ```
+
+------
 ## Prime
 ### nativ go
 ```shell
@@ -46,3 +48,5 @@ ErrorMessage { msg: "Input is neither valid WASM nor WAT" }
 
 Input
 ```
+
+------
