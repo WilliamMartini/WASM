@@ -1,9 +1,10 @@
 # Go benchmarks
+## How to run the benchmarks
 ### nativ go
 ```shell
 go test -bench=.
 ``` 
-### Lucet go
+### Lucetc-wasi go
 ```shell
 GOOS=js GOARCH=wasm go build -o ***.wasm
 ```
@@ -33,7 +34,7 @@ BenchmarkPrime-2          136954              8134 ns/op
 PASS
 ok      _/home/ubuntu/github/WASM/tests/go      1.206s
 ```
-### Lucet go
+### Lucet-wasi go
 ```shell
 GOOS=js GOARCH=wasm go build -o prime.wasm
 ```
