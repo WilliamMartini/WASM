@@ -1,14 +1,14 @@
 # Tests
 We complied some c code to wasm and then ran it on the different runtime tools. We ran each test 3 times for each tool.
 ## How to run the benchmarks
-### Nativ C
-
 ### Wasmtime
 ```shell
+?
 time wasmtime ***.wasm
 ```
 ### Wasmer
 ```shell
+?
 time wasmer run ***.wasm 
 ```
 ### Lucetc-wasi
@@ -20,8 +20,6 @@ time lucet-wasi ***.so
 ------
 ## Primes
 This test checks if a large prime number is indeed a prime number.  
-### Nativ C
-
 ### Wasmtime
 ```shell
 real	0m35.891s
@@ -45,6 +43,16 @@ real	0m26.785s
 user	0m26.775s
 ```
 ### Lucetc-wasi
+```shell
+real  0m12.730s
+user  0m0.075s
+
+real  0m12.800s
+user  0m0.067s
+
+real  0m12.743s
+user  0m0.054s
+```
 
 ### Observations
 Here we observe wasmer runs about 10 seconds faster
@@ -52,8 +60,6 @@ Here we observe wasmer runs about 10 seconds faster
 ------
 ## Fibonacci
 Here we find the Nth fibonacci number (in the test we used N=42)
-### Nativ C
-
 ### Wasmtime
 ```shell
 real	0m10.217s
@@ -77,8 +83,55 @@ real	0m11.402s
 user	0m11.391s
 ```
 ### Lucetc-wasi
+```shell
+real    0m1.815s
+user    0m0.052s
+
+real    0m1.750s
+user    0m0.085s
+
+real    0m1.779s
+user    0m0.075s
+```
 
 ### Observations
 Here we observe wasmer runs about 1 second slower
+
+------
+## Bubble Sort
+1000000 integers between 1 and 100000000
+### Wasmtime
+```shell
+
+```
+### Wasmer
+```shell
+
+```
+### Lucetc-wasi
+```shell
+
+```
+
+### Observations
+
+------
+## Multiplication of Square Matrices
+The program multiplies two square matrices of size 400x400 with between 1 and 10000 (change N for different dimension).
+
+### Wasmtime
+```shell
+
+```
+### Wasmer
+```shell
+
+```
+### Lucetc-wasi
+```shell
+
+```
+
+### Observations
 
 ------
