@@ -110,7 +110,12 @@ Here we observe wasmer runs about 1 second slower
 ```
 ### Lucetc-wasi
 ```shell
+thread 'main' panicked at 'lucet-wasi runtime error: Runtime fault: FaultDetails { fatal: false, trapcode: Some(HeapOutOfBounds), rip_addr: 140662650330365, rip_addr_details: Some(AddrDetails { in_module_code: true, file_name: Some("/lucet/src/c/bubbleSort.so"), sym_name: None }) }', lucet-wasi/src/main.rs:250:23
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace.
 
+real    0m0.399s
+user    0m0.058s
+sys     0m0.062s
 ```
 
 ### Observations
