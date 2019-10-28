@@ -14,7 +14,7 @@ time wasmer run ***.wasm
 ### Lucetc-wasi
 ```shell
 wasm32-wasi-clang -Ofast -o ***.wasm ***.c
-lucetc-wasi -o hello.so ***.wasm
+lucetc-wasi -o ***.so ***.wasm
 time lucet-wasi ***.so
 ```
 ------
@@ -117,7 +117,7 @@ Here we observe wasmer runs about 1 second slower
 
 ------
 ## Multiplication of Square Matrices
-The program multiplies two square matrices of size 400x400 with between 1 and 10000 (change N for different dimension).
+The program multiplies two square matrices of size 90x90 with between 1 and 10000 (change N for different dimension).
 
 ### Wasmtime
 ```shell
