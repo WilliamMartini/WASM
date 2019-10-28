@@ -1,7 +1,8 @@
 // C program to multiply two square matrices. 
 #include <stdio.h>
 #include <stdlib.h>
-#define N 90
+#define N 800
+#define R 100
 
 // This function multiplies mat1[][] and mat2[][], 
 // and stores the result in res[][] 
@@ -21,11 +22,12 @@ void multiply(int mat1[][N], int mat2[][N], int res[][N])
 
 int main() 
 { 
+	srand(123);
 	int mat1[N][N];
 	int i, o;
     for(o = 0; o<N; o++){
         for(i = 0; i<N; i++){
-            mat1[o][i] = rand()%10000;
+            mat1[o][i] = rand()%R;
         }
     }
   
@@ -34,7 +36,7 @@ int main()
   	int n,m;
     for(n = 0; n<N; n++){
         for(m = 0; m<N; m++){
-            mat2[n][m] = rand()%10000;
+            mat2[n][m] = rand()%R;
         }
     }
 	int res[N][N]; // To store result 

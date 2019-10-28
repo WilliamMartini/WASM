@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #define N 1000000
+#define R 100000000
 
 void swap(int *xp, int *yp)
 {
@@ -26,6 +27,7 @@ void bubbleSort(int arr[], int n)
 // Driver program to test above functions
 int main()
 {
+	srand(123);
     int arr[N];
     int i=0; 
     while(i < N) {
