@@ -71,15 +71,45 @@ Here we observe wasmer runs about 10 seconds faster
 Here we find the Nth fibonacci number (in the test we used N=42 and N=52)
 ### Wasmtime N=42
 ```shell
+real    0m2.108s
+user    0m2.139s
+sys     0m0.020s
 
+real    0m1.918s
+user    0m1.918s
+sys     0m0.001s
+
+real    0m1.937s
+user    0m1.921s
+sys     0m0.016s
 ```
 ### Wasmer N=42
 ```shell
+real    0m1.575s
+user    0m1.588s
+sys     0m0.008s
 
+real    0m1.501s
+user    0m1.497s
+sys     0m0.004s
+
+real    0m1.482s
+user    0m1.469s
+sys     0m0.012s
 ```
 ### Lucetc-wasi N=42
 ```shell
+real    0m1.726s
+user    0m0.050s
+sys     0m0.063s
 
+real    0m1.725s
+user    0m0.069s
+sys     0m0.049s
+
+real    0m1.714s
+user    0m0.079s
+sys     0m0.037s
 ```
 ### Wasmtime N=52
 ```shell
@@ -111,14 +141,25 @@ sys     0m0.056s
 ```
 ### Lucetc-wasi N=52
 ```shell
+real    2m50.199s
+user    0m0.060s
+sys     0m0.070s
 
+real    2m50.220s
+user    0m0.078s
+sys     0m0.047s
+
+real    2m49.963s
+user    0m0.061s
+sys     0m0.062s
 ```
 ### Observations
 Here we observe wasmer runs about 1 second slower
 
 ------
 ## Bubble Sort
-50000 integers between 1 and 100000000
+50000 integers between 1 and 1000000
+This benchmark doesn't work at the moment because wasm can't access other files on a server.
 ### Wasmtime
 ```shell
 
@@ -140,15 +181,45 @@ The program multiplies two square matrices of size 800x800 with intergers betwee
 
 ### Wasmtime
 ```shell
+real    0m0.068s
+user    0m0.076s
+sys     0m0.024s
 
+real    0m0.021s
+user    0m0.015s
+sys     0m0.007s
+
+real    0m0.021s
+user    0m0.018s
+sys     0m0.004s
 ```
 ### Wasmer
 ```shell
+real    0m0.034s
+user    0m0.045s
+sys     0m0.005s
 
+real    0m0.019s
+user    0m0.016s
+sys     0m0.004s
+
+real    0m0.019s
+user    0m0.011s
+sys     0m0.007s
 ```
 ### Lucetc-wasi
 ```shell
+real    0m0.476s
+user    0m0.069s
+sys     0m0.049s
 
+real    0m0.370s
+user    0m0.063s
+sys     0m0.051s
+
+real    0m0.381s
+user    0m0.056s
+sys     0m0.056s
 ```
 
 ### Observations
