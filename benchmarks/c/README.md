@@ -3,12 +3,12 @@ We complied some c code to wasm and then ran it on the different runtime tools. 
 ## How to run the benchmarks
 ### Wasmtime
 ```shell
-?
+wasm32-wasi-clang -Ofast -o ***.wasm ***.c
 time wasmtime ***.wasm
 ```
 ### Wasmer
 ```shell
-?
+wasm32-wasi-clang -Ofast -o ***.wasm ***.c
 time wasmer run ***.wasm 
 ```
 ### Lucetc-wasi
