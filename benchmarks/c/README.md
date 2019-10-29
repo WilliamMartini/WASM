@@ -59,8 +59,8 @@ Here we observe wasmer runs about 10 seconds faster
 
 ------
 ## Fibonacci
-Here we find the Nth fibonacci number (in the test we used N=42)
-### Wasmtime
+Here we find the Nth fibonacci number (in the test we used N=42 and N=52)
+### Wasmtime N=42
 ```shell
 real	0m10.217s
 user	0m10.216s
@@ -71,7 +71,7 @@ user	0m10.313s
 real	0m10.207s
 user	0m10.199s
 ```
-### Wasmer
+### Wasmer N=42
 ```shell
 real	0m11.407s
 user	0m11.401s
@@ -82,7 +82,7 @@ user	0m11.380s
 real	0m11.402s
 user	0m11.391s
 ```
-### Lucetc-wasi
+### Lucetc-wasi N=42
 ```shell
 real    0m1.815s
 user    0m0.052s
@@ -93,7 +93,25 @@ user    0m0.085s
 real    0m1.779s
 user    0m0.075s
 ```
+### Wasmtime N=52
+```shell
 
+```
+### Wasmer N=52
+```shell
+
+```
+### Lucetc-wasi N=52
+```shell
+real    2m51.336s
+user    0m0.068s
+
+real    2m50.846s
+user    0m0.095s
+
+real    2m50.398s
+user    0m0.073s
+```
 ### Observations
 Here we observe wasmer runs about 1 second slower
 
