@@ -22,36 +22,45 @@ time lucet-wasi ***.so
 This test checks if a large prime number is indeed a prime number.  
 ### Wasmtime
 ```shell
-real	0m35.891s
-user	0m35.870s
+real    0m19.243s
+user    0m19.279s
+sys     0m0.009s
 
-real	0m35.891s
-user	0m35.870s
+real    0m19.194s
+user    0m19.180s
+sys     0m0.009s
 
-real	0m36.569s
-user	0m36.548s
+real    0m19.067s
+user    0m19.051s
+sys     0m0.009s
 ```
 ### Wasmer
 ```shell
-real	0m27.062s
-user	0m27.057s
+real    0m12.620s
+user    0m12.620s
+sys     0m0.021s
 
-real	0m26.689s
-user	0m26.670s
+real    0m12.518s
+user    0m12.506s
+sys     0m0.009s
 
-real	0m26.785s
-user	0m26.775s
+real    0m12.553s
+user    0m12.550s
+sys     0m0.000s
 ```
 ### Lucetc-wasi
 ```shell
-real  0m12.730s
-user  0m0.075s
+real    0m12.863s
+user    0m0.072s
+sys     0m0.039s
 
-real  0m12.800s
-user  0m0.067s
+real    0m12.788s
+user    0m0.069s
+sys     0m0.048s
 
-real  0m12.743s
-user  0m0.054s
+real    0m12.832s
+user    0m0.067s
+sys     0m0.045s
 ```
 
 ### Observations
@@ -62,55 +71,47 @@ Here we observe wasmer runs about 10 seconds faster
 Here we find the Nth fibonacci number (in the test we used N=42 and N=52)
 ### Wasmtime N=42
 ```shell
-real	0m10.217s
-user	0m10.216s
 
-real	0m10.322s
-user	0m10.313s
-
-real	0m10.207s
-user	0m10.199s
 ```
 ### Wasmer N=42
 ```shell
-real	0m11.407s
-user	0m11.401s
 
-real	0m11.386s
-user	0m11.380s
-
-real	0m11.402s
-user	0m11.391s
 ```
 ### Lucetc-wasi N=42
 ```shell
-real    0m1.815s
-user    0m0.052s
 
-real    0m1.750s
-user    0m0.085s
-
-real    0m1.779s
-user    0m0.075s
 ```
 ### Wasmtime N=52
 ```shell
+real    3m54.373s
+user    3m54.327s
+sys     0m0.045s
 
+real    3m53.036s
+user    3m52.998s
+sys     0m0.005s
+
+real    3m53.520s
+user    3m53.451s
+sys     0m0.037s
 ```
 ### Wasmer N=52
 ```shell
+real    3m0.951s
+user    3m0.923s
+sys     0m0.012s
 
+real    3m0.762s
+user    3m0.710s
+sys     0m0.024s
+
+real    3m3.490s
+user    3m3.376s
+sys     0m0.056s
 ```
 ### Lucetc-wasi N=52
 ```shell
-real    2m51.336s
-user    0m0.068s
 
-real    2m50.846s
-user    0m0.095s
-
-real    2m50.398s
-user    0m0.073s
 ```
 ### Observations
 Here we observe wasmer runs about 1 second slower
@@ -128,12 +129,7 @@ Here we observe wasmer runs about 1 second slower
 ```
 ### Lucetc-wasi
 ```shell
-thread 'main' panicked at 'lucet-wasi runtime error: Runtime fault: FaultDetails { fatal: false, trapcode: Some(HeapOutOfBounds), rip_addr: 140662650330365, rip_addr_details: Some(AddrDetails { in_module_code: true, file_name: Some("/lucet/src/c/bubbleSort.so"), sym_name: None }) }', lucet-wasi/src/main.rs:250:23
-note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace.
 
-real    0m0.399s
-user    0m0.058s
-sys     0m0.062s
 ```
 
 ### Observations
@@ -152,14 +148,7 @@ The program multiplies two square matrices of size 800x800 with intergers betwee
 ```
 ### Lucetc-wasi
 ```shell
-real    0m0.430s
-user    0m0.058s
 
-real    0m0.366s
-user    0m0.055s
-
-real    0m0.383s
-user    0m0.064s
 ```
 
 ### Observations
