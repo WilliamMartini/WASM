@@ -1,9 +1,7 @@
-
 // C program for implementation of Bubble sort
 #include <stdio.h>
 #include <stdlib.h>
-#define N 50000
-#define R 100000000
+#define N 10
 
 void swap(int *xp, int *yp)
 {
@@ -27,15 +25,26 @@ void bubbleSort(int arr[], int n)
 // Driver program to test above functions
 int main()
 {
-	srand(123);
+    FILE *myFile;
+    myFile = fopen("numbers.txt", "r");
+
+    //read file into array
     int arr[N];
-    int i=0; 
-    while(i < N) {
-	    arr[i] = rand()%100000000; 
-        i++;
+    int i;
+
+    if (myFile == NULL){
+        printf("Error Reading File\n");
+        exit (0);
     }
+
+    for (i = 0; i < N; i++){
+        fscanf(myFile, "%d,", &arr[i] );
+    }
+
+
+    fclose(myFile);
+
     int n = sizeof(arr)/sizeof(arr[0]);
     bubbleSort(arr, n);
     return 0;
 }
-
