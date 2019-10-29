@@ -2,7 +2,7 @@
 // C program for implementation of Bubble sort
 #include <stdio.h>
 #include <stdlib.h>
-#define N 1000000
+#define N 50000
 #define R 100000000
 
 void swap(int *xp, int *yp)
