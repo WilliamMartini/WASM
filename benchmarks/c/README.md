@@ -117,7 +117,7 @@ Here we observe wasmer runs about 1 second slower
 
 ------
 ## Bubble Sort
-1000000 integers between 1 and 100000000
+50000 integers between 1 and 100000000
 ### Wasmtime
 ```shell
 
