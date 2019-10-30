@@ -64,7 +64,7 @@ sys     0m0.045s
 ```
 
 ### Observations
-Here we observe wasmer runs about 10 seconds faster
+Here we observe wasmer and lucetc are running about 7 seconds faster then wasmtime
 
 ------
 ## Fibonacci
@@ -154,7 +154,8 @@ user    0m0.061s
 sys     0m0.062s
 ```
 ### Observations
-Here we observe wasmer runs about 1 second slower
+Here we observe that for n = 42 wasmer is the fastest with 1.5s followed by lucets with 1.7s and wasmtime with 1.9s
+But for n = 52 lucets (2m50s) is about 10s faster then wasmer (3m) and more than a minute faster then lucets (3m53s)
 
 ------
 ## Bubble Sort
@@ -223,5 +224,9 @@ sys     0m0.056s
 ```
 
 ### Observations
-
+wasmer (0.025s) is the fastes being almost 10 times faster than lucets and slightly faster then wasmtime (0.034s).
 ------
+
+## Conclusions
+From the first tests it seems that lucets is fastes for larger calculation being significantly faster than wasmer and wasmtime in the fib test with n=52. But in smaller things wasmer seems to be a bit faster. Wasmtime appears to be the slowest in general although it outperformed lucets in the matrix multiplication benchmark.
+
