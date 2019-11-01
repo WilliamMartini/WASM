@@ -1,0 +1,50 @@
+# Notes on meeting - 2019-11-1
+
+## Present
+
+- BP, WM, SM, BB, SP
+
+## Discussion
+
+### Status update
+- BP gave update on platform comparioson:
+  - Wasmer got most momentun, most activity
+- WM gave update on lucet activities and benchmarks
+    - lucet process: Converting c into native code, which still need to be run with the lucet runtime -> why?
+    - run benchmarks for wasm files
+- I gave update to wasmer activities
+    - Wasmer does not support go, but the provide extension to embed wasm files into other language
+    - Wasmer uses wasicc / wasic++ : The Clang compiler to compile c/c++
+    - Go supports wasm as compile target, but as BP noted the wasm files don't work with any tool chains
+    - Run c benchmarks
+
+### Benchmarks
+
+- Made four benchmarks, all were written in c and compiled to a wasm file which was then used in the different toolchain:
+    - Prime: checks wheter the largegst integeger is an prime number or not
+      - Observation wasmer was the fastest and wasmtime the slowest
+      - Runtime was almost same as native
+    - Fibonacci:
+        - Returns the n th fib number, did test with n = 42 and 52
+        - Observed that lucet was fastest for n = 52 and both wasmer and lucet were significantly faster then wasmtime 
+    - Matrix multiplication: multiply two 800x800 matrices
+        - All were very fast beeing in the ms region, but lucet was 10times slower. SM noted could indicate that lucet might need longer start up time.
+    - Bubble sort problems compiling, probably memory allocation problem try again.
+- Remarks:
+ - wasmtime was almost in all test the least performant toolchain, for decision we still need more benchmarks -> also do it in rust
+ - Interesting results, there is community that might be intrested in a blog post. Will look into it in a later stage, with a complete image.
+    
+
+### Next steps
+- modify matrix multiplication so it runs with random generated matrices
+- fix bubble sort 
+- test rust support
+- how to import parameters into wasm
+- understand lucet, why compile it into native code and then still use lucet runtime
+- rust application that takes a string input and append it to a log file 
+
+
+## Next meeting
+
+- 2019-11-08 9:30 @ Skype
+
