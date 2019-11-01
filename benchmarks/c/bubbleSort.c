@@ -1,19 +1,25 @@
 // C program for implementation of Bubble sort
 #include <stdio.h>
 #include <stdlib.h>
-#define N 10
+#include <time.h> 
+#define R 1000
 
-void swap(int *xp, int *yp)
+typedef unsigned int uint;
+typedef unsigned long ulong;
+
+const ulong N[9] = {10000,20000,30000,40000,50000,60000,70000,80000,90000};
+
+void swap(uint *xp, uint *yp)
 {
-    int temp = *xp;
+    uint temp = *xp;
     *xp = *yp;
     *yp = temp;
 }
 
 // A function to implement bubble sort
-void bubbleSort(int arr[], int n)
+void bubbleSort(uint *arr, ulong n)
 {
-   int i, j;
+   ulong i, j;
    for (i = 0; i < n-1; i++)
 
        // Last i elements are already in place
@@ -25,26 +31,28 @@ void bubbleSort(int arr[], int n)
 // Driver program to test above functions
 int main()
 {
-    FILE *myFile;
-    myFile = fopen("numbers.txt", "r");
+	int max_n = (sizeof(N)/sizeof(N[0]))-1;
+	srand(123);
+    uint *arr;
+    arr = malloc((N[max_n])*sizeof(uint));
+    ulong i=0; 
 
-    //read file into array
-    int arr[N];
-    int i;
-
-    if (myFile == NULL){
-        printf("Error Reading File\n");
-        exit (0);
+    while(i < N[max_n]) {
+	    arr[i] = rand()%R; 
+        i++;
     }
-
-    for (i = 0; i < N; i++){
-        fscanf(myFile, "%d,", &arr[i] );
+    
+    clock_t t;
+    ulong k=0;
+    while(k <= max_n){
+        t = clock();
+        bubbleSort(arr, N[k]);
+        t = clock() - t; 
+        double time_taken = ((double)t)/CLOCKS_PER_SEC; // in seconds 
+    
+        printf("N(%lu): %f seconds \n",N[k], time_taken);
+        k++;
     }
-
-
-    fclose(myFile);
-
-    int n = sizeof(arr)/sizeof(arr[0]);
-    bubbleSort(arr, n);
+    free(arr);
     return 0;
 }
