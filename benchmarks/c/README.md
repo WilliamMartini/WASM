@@ -167,7 +167,32 @@ This benchmark doesn't work at the moment because wasm can't access other files 
 ```
 ### Wasmer
 ```shell
+N(1000): 0.001318 seconds
+N(5000): 0.046371 seconds
+N(10000): 0.177861 seconds
+N(50000): 5.856768 seconds
+N(75000): 9.485512 seconds
+N(100000): 14.908087 seconds
+N(250000): 134.260854 seconds
+N(500000): 505.702939 seconds
 
+N(1000): 0.002163 seconds
+N(5000): 0.068376 seconds
+N(10000): 0.183951 seconds
+N(50000): 5.882618 seconds
+N(75000): 9.548938 seconds
+N(100000): 15.138410 seconds
+N(250000): 134.336054 seconds
+N(500000): 498.256167 seconds
+
+N(1000): 0.001447 seconds
+N(5000): 0.047207 seconds
+N(10000): 0.180924 seconds
+N(50000): 5.840417 seconds
+N(75000): 9.406311 seconds
+N(100000): 15.070637 seconds
+N(250000): 133.665455 seconds
+N(500000): 501.524397 seconds
 ```
 ### Lucetc-wasi
 ```shell
