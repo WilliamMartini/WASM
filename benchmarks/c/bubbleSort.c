@@ -6,8 +6,8 @@
 
 typedef unsigned int uint;
 typedef unsigned long ulong;
-
-const ulong N[9] = {10000,20000,30000,40000,50000,60000,70000,80000,90000};
+ 
+const ulong N[8] = {1000,5000,10000,50000,75000,100000,250000,500000};
 
 void swap(uint *xp, uint *yp)
 {
