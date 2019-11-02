@@ -17,6 +17,11 @@ wasm32-wasi-clang -Ofast -o ***.wasm ***.c
 lucetc-wasi -o ***.so ***.wasm
 time lucet-wasi ***.so
 ```
+### Native c
+```shell
+$ gcc ***.c ***.c -o ***
+$ time ./***
+```
 ------
 ## Primes
 This test checks if a large prime number is indeed a prime number.  
@@ -61,6 +66,20 @@ sys     0m0.048s
 real    0m12.832s
 user    0m0.067s
 sys     0m0.045s
+```
+### Native
+```shell
+real	0m11.093s
+user	0m11.091s
+sys	0m0.001s
+
+real	0m11.069s
+user	0m11.068s
+sys	0m0.000s
+
+real	0m11.089s
+user	0m11.083s
+sys	0m0.005s
 ```
 
 ### Observations
@@ -111,6 +130,20 @@ real    0m1.714s
 user    0m0.079s
 sys     0m0.037s
 ```
+### Native
+```shell
+real	0m1.855s
+user	0m1.851s
+sys	0m0.004s
+
+real	0m1.830s
+user	0m1.829s
+sys	0m0.000s
+
+real	0m1.912s
+user	0m1.903s
+sys	0m0.008s
+```
 ### Wasmtime N=52
 ```shell
 real    3m54.373s
@@ -152,6 +185,20 @@ sys     0m0.047s
 real    2m49.963s
 user    0m0.061s
 sys     0m0.062s
+```
+### Native
+```shell
+real	3m41.914s
+user	3m41.826s
+sys	0m0.040s
+
+real	3m41.320s
+user	3m41.236s
+sys	0m0.052s
+
+real	3m40.613s
+user	3m40.562s
+sys	0m0.036s
 ```
 ### Observations
 Here we observe that for n = 42 wasmer is the fastest with 1.5s followed by lucets with 1.7s and wasmtime with 1.9s
@@ -247,7 +294,20 @@ real    0m0.381s
 user    0m0.056s
 sys     0m0.056s
 ```
+### Native
+```shell
+real	0m3.347s
+user	0m3.337s
+sys	0m0.009s
 
+real	0m3.326s
+user	0m3.313s
+sys	0m0.012s
+
+real	0m3.259s
+user	0m3.254s
+sys	0m0.005s
+```
 ### Observations
 wasmer (0.025s) is the fastes being almost 10 times faster than lucets and slightly faster then wasmtime (0.034s).
 
