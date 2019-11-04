@@ -69,17 +69,17 @@ sys     0m0.045s
 ```
 ### Native
 ```shell
-real	0m11.093s
-user	0m11.091s
-sys	0m0.001s
+real    0m11.093s
+user    0m11.091s
+sys     0m0.001s
 
-real	0m11.069s
-user	0m11.068s
-sys	0m0.000s
+real    0m11.069s
+user    0m11.068s
+sys     0m0.000s
 
-real	0m11.089s
-user	0m11.083s
-sys	0m0.005s
+real    0m11.089s
+user    0m11.083s
+sys     0m0.005s
 ```
 
 ### Observations
@@ -132,17 +132,17 @@ sys     0m0.037s
 ```
 ### Native
 ```shell
-real	0m1.855s
-user	0m1.851s
-sys	0m0.004s
+real    0m1.855s
+user    0m1.851s
+sys    0m0.004s
 
-real	0m1.830s
-user	0m1.829s
-sys	0m0.000s
+real    0m1.830s
+user    0m1.829s
+sys    0m0.000s
 
-real	0m1.912s
-user	0m1.903s
-sys	0m0.008s
+real    0m1.912s
+user    0m1.903s
+sys     0m0.008s
 ```
 ### Wasmtime N=52
 ```shell
@@ -188,17 +188,17 @@ sys     0m0.062s
 ```
 ### Native
 ```shell
-real	3m41.914s
-user	3m41.826s
-sys	0m0.040s
+real    3m41.914s
+user    3m41.826s
+sys     0m0.040s
 
-real	3m41.320s
-user	3m41.236s
-sys	0m0.052s
+real    3m41.320s
+user    3m41.236s
+sys     0m0.052s
 
-real	3m40.613s
-user	3m40.562s
-sys	0m0.036s
+real    3m40.613s
+user    3m40.562s
+sys     0m0.036s
 ```
 ### Observations
 Here we observe that for n = 42 wasmer is the fastest with 1.5s followed by lucets with 1.7s and wasmtime with 1.9s
@@ -210,42 +210,120 @@ But for n = 52 lucets (2m50s) is about 10s faster then wasmer (3m) and more than
 This benchmark doesn't work at the moment because wasm can't access other files on a server.
 ### Wasmtime
 ```shell
+N(1000): 0.003376 seconds
+N(5000): 0.076115 seconds
+N(10000): 0.280492 seconds
+N(50000): 8.734309 seconds
+N(75000): 15.000688 seconds
+N(100000): 24.465735 seconds
+N(250000): 203.373910 seconds
+N(500000): 766.793208 seconds
 
+N(1000): 0.002790 seconds
+N(5000): 0.076161 seconds
+N(10000): 0.283975 seconds
+N(50000): 8.728257 seconds
+N(75000): 15.126057 seconds
+N(100000): 24.424220 seconds
+N(250000): 203.571486 seconds
+N(500000): 767.521276 seconds
+
+N(1000): 0.002850 seconds
+N(5000): 0.075879 seconds
+N(10000): 0.290626 seconds
+N(50000): 8.936685 seconds
+N(75000): 15.112901 seconds
+N(100000): 24.608519 seconds
+N(250000): 203.118514 seconds
+N(500000): 765.585718 seconds
 ```
 ### Wasmer
 ```shell
-N(1000): 0.001318 seconds
-N(5000): 0.046371 seconds
-N(10000): 0.177861 seconds
-N(50000): 5.856768 seconds
-N(75000): 9.485512 seconds
-N(100000): 14.908087 seconds
-N(250000): 134.260854 seconds
-N(500000): 505.702939 seconds
+N(1000): 0.002168 seconds
+N(5000): 0.047558 seconds
+N(10000): 0.170905 seconds
+N(50000): 5.598032 seconds
+N(75000): 9.039308 seconds
+N(100000): 14.447494 seconds
+N(250000): 127.417652 seconds
+N(500000): 478.209336 seconds
 
-N(1000): 0.002163 seconds
-N(5000): 0.068376 seconds
-N(10000): 0.183951 seconds
-N(50000): 5.882618 seconds
-N(75000): 9.548938 seconds
-N(100000): 15.138410 seconds
-N(250000): 134.336054 seconds
-N(500000): 498.256167 seconds
+N(1000): 0.001700 seconds
+N(5000): 0.045453 seconds
+N(10000): 0.173779 seconds
+N(50000): 5.567362 seconds
+N(75000): 9.089426 seconds
+N(100000): 14.344330 seconds
+N(250000): 128.331921 seconds
+N(500000): 476.794052 seconds
 
-N(1000): 0.001447 seconds
-N(5000): 0.047207 seconds
-N(10000): 0.180924 seconds
-N(50000): 5.840417 seconds
-N(75000): 9.406311 seconds
-N(100000): 15.070637 seconds
-N(250000): 133.665455 seconds
-N(500000): 501.524397 seconds
+N(1000): 0.002090 seconds
+N(5000): 0.045872 seconds
+N(10000): 0.173729 seconds
+N(50000): 5.595121 seconds
+N(75000): 9.131566 seconds
+N(100000): 14.465606 seconds
+N(250000): 128.206120 seconds
+N(500000): 478.388806 seconds
 ```
 ### Lucetc-wasi
 ```shell
+N(1000): 0.004069 seconds
+N(5000): 0.047006 seconds
+N(10000): 0.161986 seconds
+N(50000): 5.150115 seconds
+N(75000): 8.490713 seconds
+N(100000): 13.517197 seconds
+N(250000): 119.187731 seconds
+N(500000): 447.631079 seconds
 
+N(1000): 0.001276 seconds
+N(5000): 0.043938 seconds
+N(10000): 0.165508 seconds
+N(50000): 5.247637 seconds
+N(75000): 8.611324 seconds
+N(100000): 13.625511 seconds
+N(250000): 119.577103 seconds
+N(500000): 448.519106 seconds
+
+N(1000): 0.002993 seconds
+N(5000): 0.045907 seconds
+N(10000): 0.164070 seconds
+N(50000): 5.181462 seconds
+N(75000): 8.554390 seconds
+N(100000): 13.721605 seconds
+N(250000): 120.241962 seconds
+N(500000): 446.838263 seconds
 ```
+### Native
+```shell
+N(1000): 0.003313 seconds
+N(5000): 0.060817 seconds
+N(10000): 0.228301 seconds
+N(50000): 7.785158 seconds
+N(75000): 12.786361 seconds
+N(100000): 20.359726 seconds
+N(250000): 183.375277 seconds
+N(500000): 686.636290 seconds
 
+N(1000): 0.002926 seconds
+N(5000): 0.060933 seconds
+N(10000): 0.227535 seconds
+N(50000): 7.728809 seconds
+N(75000): 12.743064 seconds
+N(100000): 20.333683 seconds
+N(250000): 183.147819 seconds
+N(500000): 685.229332 seconds
+
+N(1000): 0.003341 seconds
+N(5000): 0.059551 seconds
+N(10000): 0.223157 seconds
+N(50000): 7.718848 seconds
+N(75000): 12.840300 seconds
+N(100000): 20.241532 seconds
+N(250000): 183.019325 seconds
+N(500000): 684.039957 seconds
+```
 ### Observations
 
 ------
@@ -296,17 +374,17 @@ sys     0m0.056s
 ```
 ### Native
 ```shell
-real	0m3.347s
-user	0m3.337s
-sys	0m0.009s
+real    0m3.347s
+user    0m3.337s
+sys     0m0.009s
 
-real	0m3.326s
-user	0m3.313s
-sys	0m0.012s
+real    0m3.326s
+user    0m3.313s
+sys     0m0.012s
 
-real	0m3.259s
-user	0m3.254s
-sys	0m0.005s
+real    0m3.259s
+user    0m3.254s
+sys     0m0.005s
 ```
 ### Observations
 wasmer (0.025s) is the fastes being almost 10 times faster than lucets and slightly faster then wasmtime (0.034s).
