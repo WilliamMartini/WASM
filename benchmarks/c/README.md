@@ -206,8 +206,8 @@ But for n = 52 lucets (2m50s) is about 10s faster then wasmer (3m) and more than
 
 ------
 ## Bubble Sort
-50000 integers between 1 and 1000000
-This benchmark doesn't work at the moment because wasm can't access other files on a server.
+Used the bubble sort algorithm to sort different long arrays. This is the only benchmark, that doesn't run with ```time```and only measures the time was needed by sort function to sort the array.
+
 ### Wasmtime
 ```shell
 N(1000): 0.003376 seconds
@@ -325,6 +325,7 @@ N(250000): 183.019325 seconds
 N(500000): 684.039957 seconds
 ```
 ### Observations
+Wasmtime was slower than all other toolchain and even than native C. Wasmer and Lucet performed significantly faster than native C. Wasmer was faster when using smaller arrays but Lucet gained speed when increasing the length of the array. For the longest tested array, Lucet was half a minute faster than Wasmer. The startup time can't be the reason for this behavior because only the execution time of the function was measured and not the whole program.
 
 ------
 ## Multiplication of Square Matrices
@@ -332,62 +333,22 @@ The program multiplies two square matrices of size 800x800 with intergers betwee
 
 ### Wasmtime
 ```shell
-real    0m0.068s
-user    0m0.076s
-sys     0m0.024s
 
-real    0m0.021s
-user    0m0.015s
-sys     0m0.007s
-
-real    0m0.021s
-user    0m0.018s
-sys     0m0.004s
 ```
 ### Wasmer
 ```shell
-real    0m0.034s
-user    0m0.045s
-sys     0m0.005s
 
-real    0m0.019s
-user    0m0.016s
-sys     0m0.004s
-
-real    0m0.019s
-user    0m0.011s
-sys     0m0.007s
 ```
 ### Lucetc-wasi
 ```shell
-real    0m0.476s
-user    0m0.069s
-sys     0m0.049s
 
-real    0m0.370s
-user    0m0.063s
-sys     0m0.051s
-
-real    0m0.381s
-user    0m0.056s
-sys     0m0.056s
 ```
 ### Native
 ```shell
-real    0m3.347s
-user    0m3.337s
-sys     0m0.009s
 
-real    0m3.326s
-user    0m3.313s
-sys     0m0.012s
-
-real    0m3.259s
-user    0m3.254s
-sys     0m0.005s
 ```
 ### Observations
-wasmer (0.025s) is the fastes being almost 10 times faster than lucets and slightly faster then wasmtime (0.034s).
+
 
 ------
 
