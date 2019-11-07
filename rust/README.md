@@ -4,7 +4,7 @@ The program takes in a json string (encoded in base64) from standard input, deco
 # Prerequisite
 1. Ensure Rust is installed
 ```
-carvo -V
+cargo -V
 ```
 2. Ensure that the WASI toolchain is enabled on rust:
 ```
