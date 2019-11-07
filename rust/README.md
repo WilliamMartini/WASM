@@ -10,10 +10,6 @@ cargo -V
 ```
 rustup target add wasm32-wasi
 ```
-3. Install rust target `wasm32-wasi` 
-```
-rustup target add wasm32-wasi
-```
 
 # Create a new Rust project
 We will call our project demo
