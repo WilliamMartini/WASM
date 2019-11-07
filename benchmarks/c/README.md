@@ -19,8 +19,8 @@ time lucet-wasi ***.so
 ```
 ### Native C
 ```shell
-$ gcc ***.c -o ***
-  $ time ./***
+gcc ***.c -o ***
+time ./***
 ```
 ------
 ## Primes
