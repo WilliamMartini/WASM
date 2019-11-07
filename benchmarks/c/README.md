@@ -17,10 +17,10 @@ wasm32-wasi-clang -Ofast -o ***.wasm ***.c
 lucetc-wasi -o ***.so ***.wasm
 time lucet-wasi ***.so
 ```
-### Native c
+### Native C
 ```shell
-$ gcc ***.c ***.c -o ***
-$ time ./***
+$ gcc ***.c -o ***
+  $ time ./***
 ```
 ------
 ## Primes
@@ -67,7 +67,7 @@ real    0m12.832s
 user    0m0.067s
 sys     0m0.045s
 ```
-### Native
+### Native C
 ```shell
 real    0m11.093s
 user    0m11.091s
@@ -130,7 +130,7 @@ real    0m1.714s
 user    0m0.079s
 sys     0m0.037s
 ```
-### Native
+### Native C
 ```shell
 real    0m1.855s
 user    0m1.851s
@@ -186,7 +186,7 @@ real    2m49.963s
 user    0m0.061s
 sys     0m0.062s
 ```
-### Native
+### Native C
 ```shell
 real    3m41.914s
 user    3m41.826s
@@ -295,7 +295,7 @@ N(100000): 13.721605 seconds
 N(250000): 120.241962 seconds
 N(500000): 446.838263 seconds
 ```
-### Native
+### Native C
 ```shell
 N(1000): 0.003313 seconds
 N(5000): 0.060817 seconds
@@ -333,19 +333,54 @@ The program multiplies two square matrices of size 800x800 with intergers betwee
 
 ### Wasmtime
 ```shell
+real    0m6.913s
+user    0m5.959s
+sys     0m0.980s
 
+real    0m6.967s
+user    0m6.126s
+sys     0m0.840s
+
+real    0m6.573s
+user    0m5.675s
+sys     0m0.896s
 ```
 ### Wasmer
 ```shell
+real    0m4.259s
+user    0m3.411s
+sys     0m0.860s
 
+real    0m4.305s
+user    0m3.399s
+sys     0m0.903s
+
+real    0m4.456s
+user    0m3.488s
+sys     0m0.963s
 ```
 ### Lucetc-wasi
 ```shell
+thread 'main' panicked at 'lucet-wasi runtime error: Runtime fault: FaultDetails { fatal: false, trapcode: Some(HeapOutOfBounds), rip_addr: 139640631123235, rip_addr_details: Some(AddrDetails { in_module_code: true, file_name: Some("/lucet/src/c/matrixMult.so"), sym_name: None }) }', lucet-wasi/src/main.rs:250:23
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace.
 
+real    0m0.462s
+user    0m0.079s
+sys     0m0.062s
 ```
-### Native
+### Native C
 ```shell
+real    0m4.202s
+user    0m4.185s
+sys     0m0.016s
 
+real    0m4.493s
+user    0m4.475s
+sys     0m0.016s
+
+real    0m4.129s
+user    0m4.113s
+sys     0m0.016s
 ```
 ### Observations
 
@@ -353,5 +388,5 @@ The program multiplies two square matrices of size 800x800 with intergers betwee
 ------
 
 ## Conclusions
-From the first tests it seems that lucets is fastes for larger calculation being significantly faster than wasmer and wasmtime in the fib test with n=52. But in smaller things wasmer seems to be a bit faster. Wasmtime appears to be the slowest in general although it outperformed lucets in the matrix multiplication benchmark.
+From the first tests it seems that lucets is fastes for larger calculation being significantly faster than wasmer and wasmtime in the fib test with n=52. But in smaller things wasmer seems to be a bit faster. Wasmtime appears to be the slowest in general.
 
