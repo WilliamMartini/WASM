@@ -16,8 +16,8 @@ We will call our project demo
 ```
 cargo new --bin demo
 ```
-Navigate to ```demo/src/main.rs``` and copy the code
-
+Navigate to ```demo/src/main.rs``` and copy the code  
+Edit the ```Cargo.toml``` file to include the dependencies
 
 Now we can build the project using:
 ```
@@ -26,16 +26,16 @@ cargo build --target wasm32-wasi
 ### Running the project
 Navigate to ```demo/target/wasm32-wasi/debug/``` and run:
 ```
-wasmer run --dir=. demo.wasm "eyJhIjoidHh0IiwiYiI6IDEyM30="
+wasmer run --dir=. demo.wasm '{"a":"txt", "b":1}'
 ```
 You should see the output:
 ```
-The program accepts an input in base64
-[Usage]: wasmer run --dir=. main.wasm "eyJhIjoidHh0IiwiYiI6IDEyM30="
-JSON structure {"a":"txt","b": 123}
+The program accepts a JSON input via stdin
+[Usage]: wasmer run --dir=. main.wasm '{"a":"txt", "b":2}'
+The input is unmarshaled and saved to a file log.txt
 ----------------------------------------
-Got input = eyJhIjoidHh0IiwiYiI6IDEyM30=
-Converts to = {"a":"txt","b": 123}
+Got input = {"a":"txt","b": 1}
 File log.txt updated
 ```
+Note: The ```log.txt``` should have the data appended, however it appears that the ```.append(true)``` does not work properly with WASI at the moment
 ------
