@@ -83,6 +83,7 @@ sys     0m0.005s
 ```
 
 ### Observations
+![chart](/benchmarks/c/charts/Primes.png)
 Here we observe wasmer and lucetc are running about 7 seconds faster then wasmtime
 
 ------
@@ -201,6 +202,8 @@ user    3m40.562s
 sys     0m0.036s
 ```
 ### Observations
+![chart](/benchmarks/c/charts/Fibonacci_42.png)
+![chart](/benchmarks/c/charts/Fibonacci_52.png)
 Here we observe that for n = 42 wasmer is the fastest with 1.5s followed by lucets with 1.7s and wasmtime with 1.9s
 But for n = 52 lucets (2m50s) is about 10s faster then wasmer (3m) and more than a minute faster then lucets (3m53s)
 
@@ -325,6 +328,8 @@ N(250000):  183.019325 seconds
 N(500000):  684.039957 seconds
 ```
 ### Observations
+![chart](/benchmarks/c/charts/Bubble_Sort_all.png)
+![chart](/benchmarks/c/charts/Bubble_Sort_focus.png)
 Wasmtime was slower than all other toolchain and even than native C. Wasmer and Lucet performed significantly faster than native C. Wasmer was faster when using smaller arrays but Lucet gained speed when increasing the length of the array. For the longest tested array, Lucet was half a minute faster than Wasmer. The startup time can't be the reason for this behavior because only the execution time of the function was measured and not the whole program.
 
 ------
@@ -383,7 +388,7 @@ user    0m4.113s
 sys     0m0.016s
 ```
 ### Observations
-
+![chart](/benchmarks/c/charts/Matirx_Multiplication.png)
 
 ------
 
