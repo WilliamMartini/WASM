@@ -394,5 +394,5 @@ Wasmertime was again the slowest one by 2.5 seconds. Wasmer and lucetc were clos
 ------
 
 ## Conclusions
-From the first tests it seems that lucets is fastes for larger calculation being significantly faster than wasmer and wasmtime in the Fibonacci and the bubble sort benchmark. But in smaller things wasmer seems to be a bit faster. Wasmtime appears to be the slowest in general.
+From the first tests, it seems that lucets is faster for larger calculation being significantly faster than wasmer and wasmtime in the Fibonacci and the bubble sort benchmark. But for smaller workloads wasmer seems to be a bit faster. Wasmtime appears to be the slowest in general.
 
