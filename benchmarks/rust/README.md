@@ -123,7 +123,7 @@ user    5m58.260s
 sys     0m0.076s
 ```
 ### Observations
-
-
+![chart](/benchmarks/rust/charts/Fibonacci_42.png)
+![chart](/benchmarks/rust/charts/Fibonacci_52.png)
 ------
 ## Conclusions
