@@ -134,11 +134,11 @@ sys     0m0.037s
 ```shell
 real    0m1.855s
 user    0m1.851s
-sys    0m0.004s
+sys     0m0.004s
 
 real    0m1.830s
 user    0m1.829s
-sys    0m0.000s
+sys     0m0.000s
 
 real    0m1.912s
 user    0m1.903s
