@@ -125,5 +125,8 @@ sys     0m0.076s
 ### Observations
 ![chart](/benchmarks/rust/charts/Fibonacci_42.png)
 ![chart](/benchmarks/rust/charts/Fibonacci_52.png)
+Unexpected the results of these benchmarks are quite different from those with done in C. Compared to the same Fibonacci calculation, there wasn't a clear winner in C. Lucetc performed best for n=52 and wamer for n=42. But the similar benchmark in rust showed clearly that the best performing one native is. Wasmer and wasmtime performed quite similar to wamer being a little bit better. The clear winner here is lucetc which needed close to half of the time.
+
 ------
 ## Conclusions
+Overall lucetc preformed the best but it was still slower than native rust. Wasmer and wasmtime needed much more time to calculate the Fibonacci numbers.
