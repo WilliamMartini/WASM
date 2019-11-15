@@ -3,4 +3,5 @@ Software Maintenance and Evolution: Using Web Assembly to make Serverless Applic
 ## Links
 https://www.fortinet.com/blog/threat-research/webassembly-101-bringing-bytecode-to-the-web.html  
 https://de.slideshare.net/gskachkov/webassembly-overview  
-https://de.slideshare.net/BradBeiermann/webassembly-wasm-introduction-presentation  
+https://de.slideshare.net/BradBeiermann/webassembly-wasm-introduction-presentation
+https://hacks.mozilla.org/2019/11/announcing-the-bytecode-alliance/
