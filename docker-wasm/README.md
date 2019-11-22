@@ -1,5 +1,7 @@
 # Wasmer in Docker Container
-This container simply containes has the wasmer binary and a hello world wasm file.
+This container simply contains the wasmer binary and a hello world wasm file.
+
+Note: The wasmer binnary is too large for github, grab the latest binnary using ```curl https://get.wasmer.io -sSfL | sh``` and then copy the binnary ```~/.wasmer/bin/wasmer``` into this folder.
 
 Build:
 ``` 
