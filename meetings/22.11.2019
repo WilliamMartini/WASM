@@ -1,0 +1,26 @@
+## Present
+    - BB, WM, BP(Skype), SM
+
+## Discussion
+
+- Finalizing project:
+  Aim to present at the 13.12
+  Having a doc or a tool to help set everything up on openwhisk/aws
+
+- Progress
+    - Bill: bluemix created account tried using a action, was able to run basic js action. Wasn't able to run docker action yet
+    - William: aws found some tutorial how to run docker container, but a bit hacky and maybe slow (losing advantage of serverless)
+    - Leo: build docker container with wasmer runtime and mounted wasm file, was able to run it.  
+           Found another approach using node.js, so docker would not be needed.
+  
+## Next steps
+
+- Team to look into possibility using on node.js runing wasm file in javascript on the different enviroments
+    -Fall back to docker if it fails
+    -Docker container is quite large, investigate why? And include entrypoint so you don't need to include it in the docker run command.
+    -AWS try layered approach 
+- SM, SP What is required for the final presentation? Report, Demo, etc...
+
+## Next meeting
+
+- 2019-29-11, 0930 CEST, skype/gotomeeting
