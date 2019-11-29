@@ -2,21 +2,21 @@
 
 Start wsk
 ```
-cd ~/openwhisk-devtools/docker-compose/.wskprops
+cd ~/openwhisk-devtools/docker-compose/
 sudo make run
 export WSK_CONFIG_FILE=.wskprops
 ```
 
 Running the add program
 ```
-clang add.h -o add.wasm
+clang add.c -o add.wasm
 zip action.zip index.js add.wasm package.json
 wsk -i action create wasm action.zip --kind nodejs:10
 wsk -i action invoke wasm -r -p a 2 -p b 2
 ```
 Remove the action:
 ```
-wsk -i action rm wasmer
+wsk -i action delete wasm
 ```
 Obtained error:
 <pre>
@@ -37,7 +37,7 @@ The expected assembly code is itf:
     get_local $num2
     i32.add))
 </pre>
-To get this format we need to compile like:
+To get this format we need to compile with enscripten:
 <pre> emcc -s WASM=1 -s SIDE_MODULE=1 -s <b>EXPORTED_FUNCTIONS="['_add']"</b> -O1 add.c -o add.wasm </pre>
 
 
