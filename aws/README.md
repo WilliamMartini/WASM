@@ -1,7 +1,9 @@
 # AWS
-aws lambda update-function-code --function-name wasm_add fileb://action.zip
+aws lambda update-function-code --function-name wasm_add --zip-file fileb://action.zip
+aws lambda update-function-code --function-name wasm_fib --zip-file fileb://action.zip
 
 aws lambda invoke --function-name wasm_add --payload '{ "a":1,"b":2}' response.json
+aws lambda invoke --function-name wasm_fib --payload '{ "a":10}' response.json
 
 ## Links
 https://hackernoon.com/how-did-i-hack-aws-lambda-to-run-docker-containers-7184dc47c09b
