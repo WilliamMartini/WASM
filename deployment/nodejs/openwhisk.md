@@ -67,7 +67,11 @@ wsk -i action invoke -r hello -p name YourName
 wsk activation list
 ```
 
-
+## Start openwhisk
+```shell
+cd ~/openwhisk-devtools/docker-compose/
+sudo make run
+export WSK_CONFIG_FILE=.wskprops
 
 ## Links
 http://jamesthom.as/blog/2018/01/19/starting-openwhisk-in-sixty-seconds/
