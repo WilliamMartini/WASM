@@ -14,7 +14,7 @@ The objective of this project is to understand how WASM can be used as a standal
 ## Overview
 
 ## Source
-[3] https://blog.cloudflare.com/webassembly-on-cloudflare-workers/
+[3] https://blog.cloudflare.com/webassembly-on-cloudflare-workers/   
 [7] JONAS, Eric, SCHLEIER-SMITH, Johann, SREEKANTI, Vikram, et al. Cloud programming simplified: a berkeley view on serverless computing. arXiv preprint arXiv:1902.03383, 2019.
 
 ## Links
