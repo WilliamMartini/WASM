@@ -1,5 +1,5 @@
 # Using Web Assembly to make Serverless Applications more Portable  
-Project is part of the course [Software Maintenance and Evolution](https://www.ifi.uzh.ch/en/seal/teaching/courses/sme.html)    
+This project is part of the course [Software Maintenance and Evolution](https://www.ifi.uzh.ch/en/seal/teaching/courses/sme.html).    
 Supervisor: Dr. Sebastiano Panichella   
 Advisor: Dr Seán Murphy
 
