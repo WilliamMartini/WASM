@@ -1,5 +1,7 @@
-# WASM
-Software Maintenance and Evolution: Using Web Assembly to make Serverless Applications more Portable
+# Using Web Assembly to make Serverless Applications more Portable  
+Project is part of the course [Software Maintenance and Evolution](https://www.ifi.uzh.ch/en/seal/teaching/courses/sme.html)    
+Supervisor: Dr. Sebastiano Panichella   
+Advisor: Dr Seán Murphy
 
 ## Context 
 Web Assembly (WASM) is a relatively new system for packaging software which can run in very diverse contexts; originally developed for a browser context - running in a classical Javascript V8 engine - there is increasing interest in running it WASM binaries in a server context. More specifically, running a V8 or other Javascript engine on a server to execute arbitrary server side code is the focus.
