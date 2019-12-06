@@ -1,5 +1,5 @@
 # Tests
-We complied some c code to wasm and then ran it on the different runtime tools. We ran each test 3 times for each tool.
+We complied some rust code to wasm and then ran it on the different runtime tools. We ran each test 3 times for each tool.
 ## How to run the benchmarks
 ### Wasmtime
 ```shell
