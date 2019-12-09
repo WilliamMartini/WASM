@@ -1,11 +1,25 @@
 # Deployment with Node.js
 
+### Install Emscripten
+
+[Getting Started](https://emscripten.org/docs/getting_started/downloads.html)
+
 ### Compile to wasm, export function you want to use
 ``` shell
 emcc -s WASM=1 -s SIDE_MODULE=1 -s EXPORTED_FUNCTIONS="['_***']" -O1 ***.c -o ***.wasm
 ```
-*** can be replaced with add or calculate
-
+*** can be replaced with add or calculate   
+If the following error appears:
+``` shell
+WARNING  root: LLVM version appears incorrect (seeing "(/b/s/w/ir/cache/git/chromium.googlesource.com-external-github.com-llvm-llvm--project", expected "3.4")
+INFO     root: (Emscripten: Running sanity checks)
+CRITICAL root: Cannot find /home/ubuntu/aws/emsdk/upstream/bin/lli, check the paths in ~/.emscripten
+```
+Use the following command to reactivate PATH and other environment variables in the current terminal:
+``` shell
+cd emsdk
+source ./emsdk_env.sh
+```
 ### Create deployment package with source files
 ``` shell
 zip action.zip index.js *** package.json
