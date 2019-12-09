@@ -61,11 +61,11 @@ aws lambda update-function-code --function-name *** --zip-file fileb://action.zi
 ### Invoke action on aws
 add example:
 ``` shell
-aws lambda invoke --function-name wasm_add --payload '{ "a":1,"b":2}' response.json
+aws lambda invoke --function-name wasm_add --payload '{"a":1,"b":2}' response.json
 ```
 fib example:
 ``` shell
-aws lambda invoke --function-name wasm_fib --payload '{ "a":10}' response.json
+aws lambda invoke --function-name wasm_fib --payload '{"a":10}' response.json
 ```
 
 ## Links
