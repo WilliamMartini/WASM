@@ -6,18 +6,11 @@ emcc -s WASM=1 -s SIDE_MODULE=1 -s EXPORTED_FUNCTIONS="['_***']" -O1 ***.c -o **
 ```
 *** can be replaced with add or calculate
 
-### Create deployment package with source files.
+### Create deployment package with source files
 ``` shell
 zip action.zip index.js *** package.json
 ```
 *** can be replaced with wasm_add or wasm_fib
-
-### Create deployment package with source files. 
-``` shell
-zip action.zip index.js *** package.json  
-```
-*** can be replaced with wasm_add or wasm_fib
-
 
 ## Deployment on openwhisk
 [Setup openwhisk](https://github.com/WilliamMartini/WASM/blob/master/deployment/nodejs/openwhisk.md)
