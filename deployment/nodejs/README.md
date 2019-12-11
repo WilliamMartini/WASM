@@ -24,7 +24,7 @@ source ./emsdk_env.sh
 ``` shell
 zip action.zip index.js *** package.json
 ```
-*** can be replaced with wasm_add or wasm_fib
+*** can be replaced with add.wasm or fib.wasm
 
 ## Deployment on openwhisk
 [Setup openwhisk](https://github.com/WilliamMartini/WASM/blob/master/deployment/nodejs/openwhisk.md)
