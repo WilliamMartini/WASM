@@ -1,0 +1,5 @@
+#!/bin/bash
+echo '# Readme: https://github.com/apache/openwhisk-runtime-docker/blob/master/core/actionProxy/stub.sh '
+
+./wasmer run myfile.wasm | tr '\n' ";" | echo "{ \"start msg\" : \"$(cat)\" }"
+# echo "{\"start msg\": \"Ensure you run with wasmer and exec script in a zip file\" }"

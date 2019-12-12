@@ -1,0 +1,3 @@
+#!/bin/bash
+
+./wasmer run myfile.wasm | tr '\n' ";" | echo "{ \"body\" : \"$(cat)\" }"
