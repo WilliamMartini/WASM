@@ -19,7 +19,7 @@ time lucet-wasi ***.so
 ```
 ### Native C
 ```shell
-gcc ***.c -o ***
+gcc -Ofast ***.c -o ***
 time ./***
 ```
 ------
@@ -69,22 +69,22 @@ sys     0m0.045s
 ```
 ### Native C
 ```shell
-real    0m11.093s
-user    0m11.091s
+real    0m10.802s
+user    0m10.792s
+sys     0m0.009s
+
+real    0m10.694s
+user    0m10.692s
 sys     0m0.001s
 
-real    0m11.069s
-user    0m11.068s
-sys     0m0.000s
-
-real    0m11.089s
-user    0m11.083s
-sys     0m0.005s
+real    0m10.570s
+user    0m10.560s
+sys     0m0.009s
 ```
 
 ### Observations
 ![chart](/toolchain-comparison/benchmarks/c/charts/Primes.png)
-Here we observe wasmer and lucetc are running about 7 seconds faster then wasmtime. Lucetc, wasmer and native are very close to each other but native is still the fastest one.
+Here we observe wasmer and lucetc are running about 7 seconds faster then wasmtime. Lucetc and wasmer are very close to each other but native is still the fastest one.
 
 ------
 ## Fibonacci
@@ -131,19 +131,19 @@ real    0m1.714s
 user    0m0.079s
 sys     0m0.037s
 ```
-### Native C
+### Native C N=42
 ```shell
-real    0m1.855s
-user    0m1.851s
-sys     0m0.004s
-
-real    0m1.830s
-user    0m1.829s
+real    0m0.550s
+user    0m0.550s
 sys     0m0.000s
 
-real    0m1.912s
-user    0m1.903s
-sys     0m0.008s
+real    0m0.550s
+user    0m0.549s
+sys     0m0.001s
+
+real    0m0.550s
+user    0m0.545s
+sys     0m0.005s
 ```
 ### Wasmtime N=52
 ```shell
@@ -187,19 +187,19 @@ real    2m49.963s
 user    0m0.061s
 sys     0m0.062s
 ```
-### Native C
+### Native C N=52
 ```shell
-real    3m41.914s
-user    3m41.826s
-sys     0m0.040s
+real    1m11.051s
+user    1m11.011s
+sys     0m0.028s
 
-real    3m41.320s
-user    3m41.236s
-sys     0m0.052s
+real    1m10.931s
+user    1m10.921s
+sys     0m0.005s
 
-real    3m40.613s
-user    3m40.562s
-sys     0m0.036s
+real    1m11.050s
+user    1m11.028s
+sys     0m0.017s
 ```
 ### Observations
 ![chart](/toolchain-comparison/benchmarks/c/charts/Fibonacci_42.png)
@@ -300,37 +300,37 @@ N(500000):  446.838263 seconds
 ```
 ### Native C
 ```shell
-N(1000):      0.003313 seconds
-N(5000):      0.060817 seconds
-N(10000):     0.228301 seconds
-N(50000):     7.785158 seconds
-N(75000):    12.786361 seconds
-N(100000):   20.359726 seconds
-N(250000):  183.375277 seconds
-N(500000):  686.636290 seconds
+N(1000):      0.001885 seconds
+N(5000):      0.035767 seconds
+N(10000):     0.119085 seconds
+N(50000):     3.676385 seconds
+N(75000):     5.922076 seconds
+N(100000):    9.222764 seconds
+N(250000):   84.284662 seconds
+N(500000):  313.944144 seconds
 
-N(1000):      0.002926 seconds
-N(5000):      0.060933 seconds
-N(10000):     0.227535 seconds
-N(50000):     7.728809 seconds
-N(75000):    12.743064 seconds
-N(100000):   20.333683 seconds
-N(250000):  183.147819 seconds
-N(500000):  685.229332 seconds
+N(1000):      0.001480 seconds
+N(5000):      0.035028 seconds
+N(10000):     0.117659 seconds
+N(50000):     3.605673 seconds
+N(75000):     5.926823 seconds
+N(100000):    9.286539 seconds
+N(250000):   83.701737 seconds
+N(500000):  314.045473 seconds
 
-N(1000):      0.003341 seconds
-N(5000):      0.059551 seconds
-N(10000):     0.223157 seconds
-N(50000):     7.718848 seconds
-N(75000):    12.840300 seconds
-N(100000):   20.241532 seconds
-N(250000):  183.019325 seconds
-N(500000):  684.039957 seconds
+N(1000):      0.001778 seconds
+N(5000):      0.036815 seconds
+N(10000):     0.126104 seconds
+N(50000):     3.645216 seconds
+N(75000):     5.855988 seconds
+N(100000):    9.253796 seconds
+N(250000):    83.386074 seconds
+N(500000):   313.534910 seconds
 ```
 ### Observations
 ![chart](/toolchain-comparison/benchmarks/c/charts/Bubble_Sort_all.png)
 ![chart](/toolchain-comparison/benchmarks/c/charts/Bubble_Sort_focus.png)
-Wasmtime was slower than all other toolchain and even than native C with the exception of the smallest array. Wasmer and Lucet performed significantly faster than native C. Wasmer was faster when using smaller arrays but Lucet gained speed when increasing the length of the array. For the longest tested array, Lucet was half a minute faster than Wasmer. The startup time can't be the reason for this behavior because only the execution time of the function was measured and not the whole program.
+Wasmtime was slower than all other toolchain. Wasmer and Lucet performed significantly slower than native C. Wasmer was faster when using smaller arrays but Lucet gained speed when increasing the length of the array. For the longest tested array, Lucet was half a minute faster than Wasmer. The startup time can't be the reason for this behavior because only the execution time of the function was measured and not the whole program.
 
 ------
 ## Multiplication of Square Matrices
@@ -375,16 +375,16 @@ sys     0m0.062s
 ```
 ### Native C
 ```shell
-real    0m4.202s
-user    0m4.185s
-sys     0m0.016s
+real    0m3.779s
+user    0m3.739s
+sys     0m0.020s
 
-real    0m4.493s
-user    0m4.475s
-sys     0m0.016s
+real    0m3.845s
+user    0m3.820s
+sys     0m0.024s
 
-real    0m4.129s
-user    0m4.113s
+real    0m3.828s
+user    0m3.812s
 sys     0m0.016s
 ```
 ### Observations
