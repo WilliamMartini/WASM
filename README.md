@@ -14,7 +14,7 @@ In concert with WASM development, interest in serverless technology [1]  is incr
 The objective of this project is to understand how WASM can be used as a standalone binary format which can be executed in multiple cloud contexts in order to recommend how serverless platforms can best support WASM..
 
 ## Source  
-[1] JONAS, Eric, SCHLEIER-SMITH, Johann, SREEKANTI, Vikram, et al. Cloud programming simplified: a berkeley view on serverless computing. arXiv preprint arXiv:1902.03383, 2019.
+[1] JONAS, Eric, SCHLEIER-SMITH, Johann, SREEKANTI, Vikram, et al. Cloud programming simplified: a berkeley view on serverless computing. arXiv preprint arXiv:1902.03383, 2019.   
 [2] https://blog.cloudflare.com/webassembly-on-cloudflare-workers/ 
 
 ## Links
