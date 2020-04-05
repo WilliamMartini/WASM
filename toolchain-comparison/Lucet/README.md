@@ -3,7 +3,7 @@
 ```***.**.***.143```
 
 ## Getting started with Lucet
-Soruce of the tutorial: https://github.com/fastly/lucet/wiki
+Source of the tutorial: https://github.com/fastly/lucet/wiki
 
 ### Setting up the environment
 1. The Lucet repository uses git submodules. Make sure they are checked out by running ```git submodule init && git submodule update```.
